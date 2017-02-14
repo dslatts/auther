@@ -67,6 +67,8 @@ class Login extends React.Component {
       password: event.target.password.value
     }
     this.props.loginUser(userinfo);
+    event.target.email.value = '';
+    event.target.password.value = '';
   }
 }
 

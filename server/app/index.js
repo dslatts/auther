@@ -43,6 +43,12 @@ app.post('/login', function(req, res, next) {
   .catch(next);
 });
 
+app.delete('/logout', function(req, res, next) {
+  console.log('destroying session');
+  req.session.destroy();
+  res.send('woo');
+})
+
 app.use('/api', require('../api/api.router'));
 
 var validFrontendRoutes = ['/', '/stories', '/users', '/stories/:id', '/users/:id', '/signup', '/login'];
